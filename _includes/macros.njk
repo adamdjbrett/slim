@@ -1,12 +1,13 @@
 {% macro header(metadata) %}
-<div class="header">
+<header class="header">
   <h1 class="site-title"><a href="/">{{ metadata.title }}</a></h1>
   <p class="site-tagline">{{ metadata.description }}</p>
-  <div class="nav">
-    <a class="nav-btn" href="#">
+  <nav class="nav" aria-label="Primary navigation">
+    <button class="nav-btn" type="button" aria-expanded="false" aria-controls="primary-nav-list">
       <span class="ci ci-burger"></span>
-    </a>
-    <ul class="nav-list">
+      <span class="sr-only">Toggle navigation</span>
+    </button>
+    <ul id="primary-nav-list" class="nav-list" hidden>
       {% if metadata.extra.slimMenu and metadata.extra.slimMenu.length %}
         {% for item in metadata.extra.slimMenu %}
         <li><a href="{{ item.url | safe }}">{{ item.name }}</a></li>
@@ -19,8 +20,8 @@
         {% endfor %}
       {% endif %}
     </ul>
-  </div>
-</div>
+  </nav>
+</header>
 {% endmacro %}
 
 {% macro postHeader(post) %}
