@@ -1,0 +1,13 @@
+---
+layout: layouts/base.njk
+title: "Tags · Slim"
+permalink: /tags/
+---
+<div class="post">
+  <h2 class="post-title"><a href="{{ page.url }}">Tags</a></h2>
+  <ul class="tag-list">
+    {% for term in collections.tagList %}
+    <li><a href="/tags/{{ term | slugify }}/">#{{ term }}</a></li>
+    {% endfor %}
+  </ul>
+</div>

@@ -1,0 +1,36 @@
+{% import "macros.njk" as macros %}
+<!DOCTYPE html>
+<html lang="{{ metadata.language }}">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>{% if title %}{{ title }}{% else %}{{ metadata.title }}{% endif %}</title>
+  <meta name="description" content="{{ description or metadata.description }}">
+  <meta name="generator" content="{{ eleventy.generator }}">
+  <link rel="icon" href="{{ metadata.icon or '/11ty.svg' }}">
+  <link rel="stylesheet" href="/slim.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Source+Code+Pro" rel="stylesheet" type="text/css">
+  {% if metadata.generateRss %}
+  <link rel="alternate" type="application/rss+xml" title="{{ metadata.title }} RSS" href="/feed/feed.xml">
+  <link rel="alternate" type="application/atom+xml" title="{{ metadata.title }} Feed" href="/feed/feed.xml">
+  {% endif %}
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+  {% if extraHead %}{{ extraHead | safe }}{% endif %}
+</head>
+<body>
+  <div class="container">
+    {{ macros.header(metadata) }}
+    <div class="content">
+      <div class="posts">
+        {{ content | safe }}
+      </div>
+      {% if pagination and (pagination.href.previous or pagination.href.next) and disablePagination != true %}
+      {{ macros.pagination(pagination) }}
+      {% endif %}
+    </div>
+    {{ macros.footer(metadata) }}
+  </div>
+  <script src="/js/slim.js"></script>
+  {% if extraScript %}{{ extraScript | safe }}{% endif %}
+</body>
+</html>

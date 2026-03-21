@@ -1,0 +1,20 @@
+{
+  "title": "Slim",
+  "description": "",
+  "language": "en",
+  "author": "James Clark",
+  "url": "https://example.com",
+  "icon": "/11ty.svg",
+  "generateRss": true,
+  "extra": {
+    "slimSummary": false,
+    "slimContent": false,
+    "slimFooter": "",
+    "slimMenu": [
+      { "url": "/tags/", "name": "Tags" }
+    ],
+    "slimSocial": [
+      { "url": "https://github.com/jameshclrk/zola-slim", "name": "Github" }
+    ]
+  }
+}

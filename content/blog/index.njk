@@ -1,0 +1,11 @@
+---
+layout: layouts/base.njk
+title: "Blog · Slim"
+pagination:
+  data: collections.posts
+  size: 5
+  alias: postsPage
+permalink: "/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
+---
+{% import "macros.njk" as macros %}
+{{ macros.listPages(postsPage, metadata) }}

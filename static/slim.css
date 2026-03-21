@@ -50,8 +50,7 @@ tbody tr:nth-child(odd) th {
 
 body {
   color: #555;
-  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
-    "WenQuanYi Micro Hei", Arial, Serif;
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", Arial, Serif;
   font-size: 100%;
   font-weight: 400;
   line-height: 1.85;
@@ -67,8 +66,7 @@ h6 {
   font-weight: 700;
   line-height: 1.25;
   margin-bottom: 0.75rem;
-  font-family: "Source Sans Pro", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei",
-    "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h1 {
@@ -101,6 +99,7 @@ a {
   color: #2980b9;
   text-decoration: none;
 }
+
 a:hover,
 a:focus {
   text-decoration: underline;
@@ -150,6 +149,7 @@ blockquote {
   color: #7a7a7a;
   border-left: 0.3rem solid #e5e5e5;
 }
+
 blockquote p:last-child {
   margin-bottom: 0;
 }
@@ -182,11 +182,13 @@ button,
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+
 button::-moz-focus-inner,
 .btn::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
+
 button:hover,
 button:focus,
 .btn:hover,
@@ -197,6 +199,7 @@ button:focus,
   transition: all 0.3s;
   text-decoration: none;
 }
+
 button:active,
 .btn:active {
   color: #0074d9;
@@ -214,6 +217,7 @@ button:active,
   font-size: 1.5rem;
   font-weight: 700;
 }
+
 .site-title a {
   color: #333;
 }
@@ -230,21 +234,25 @@ button:active,
   display: inline-block;
   line-height: 16px;
 }
+
 .nav-btn.is-on .ci-burger {
   background: transparent;
 }
+
 .nav-btn.is-on .ci-burger::before {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
   top: 0;
 }
+
 .nav-btn.is-on .ci-burger::after {
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
   bottom: 0;
 }
+
 .nav-btn.is-on + .nav-list {
   background: #ffffff;
   display: block;
@@ -271,6 +279,7 @@ button:active,
   position: relative;
   vertical-align: top;
 }
+
 .ci:before,
 .ci:after {
   content: "";
@@ -287,6 +296,7 @@ button:active,
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+
 .ci-burger:before,
 .ci-burger:after {
   width: 100%;
@@ -296,9 +306,11 @@ button:active,
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+
 .ci-burger:before {
   top: -6px;
 }
+
 .ci-burger:after {
   bottom: -6px;
 }
@@ -314,11 +326,13 @@ button:active,
   padding-left: 0;
   padding-right: 0;
 }
+
 .container:before,
 .container:after {
   content: "";
   display: table;
 }
+
 .container:after {
   clear: both;
 }
@@ -327,17 +341,21 @@ button:active,
   position: relative;
   margin-top: 5em;
 }
+
 .pagination:before,
 .pagination:after {
   content: "";
   display: table;
 }
+
 .pagination:after {
   clear: both;
 }
+
 .pagination .previous {
   float: left;
 }
+
 .pagination .next {
   float: right;
 }
@@ -348,6 +366,7 @@ button:active,
   text-align: center;
   margin: 2rem 0 1rem;
 }
+
 .footer a {
   color: #333;
 }
@@ -382,6 +401,7 @@ button:active,
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+
 .post-title a:after,
 .post-title a:before {
   content: "";
@@ -391,26 +411,31 @@ button:active,
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+
 .post-title a:before {
   left: -23px;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
 .post-title a:after {
   -webkit-transform: rotate(225deg);
   -ms-transform: rotate(225deg);
   transform: rotate(225deg);
   right: -23px;
 }
+
 .post-title a:hover:before,
 .post-title a:hover:after {
   border-top-color: #ccc;
   border-right-color: #ccc;
 }
+
 .post-title a:hover:before {
   left: -3px;
 }
+
 .post-title a:hover:after {
   right: -3px;
 }
@@ -431,7 +456,6 @@ button:active,
 }
 
 /* styling for tags on homepage */
-
 .post-tags {
   color: #ccc;
   display: block;
@@ -457,8 +481,8 @@ button:active,
   }
   .nav-list {
     transform: translateX(100%);
-    li {
-      display: inline;
-    }
+  }
+  .nav-list li {
+    display: inline;
   }
 }

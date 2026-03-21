@@ -1,0 +1,21 @@
+---
+layout: layouts/base.njk
+---
+<div class="post">
+  <h2 class="post-title"><a href="{{ page.url }}">{{ title }}</a></h2>
+  <div class="post-header">
+    <span class="post-date">{{ page.date | readableDate('LLLL dd, yyyy') }}</span>
+    {% if tags and tags.length %}
+    <div class="post-tags">
+      {% for tag in tags %}
+        {% if tag != "posts" %}
+        <span class="post-tag">#<a href="/tags/{{ tag | slugify }}/">{{ tag }}</a></span>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  <div class="post-content">
+    {{ content | safe }}
+  </div>
+</div>

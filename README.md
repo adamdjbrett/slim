@@ -1,48 +1,42 @@
-# Slim
+# Slim Eleventy Port
 
-Slim is a minimal, clean and beautiful theme for [Zola](http://getzola.org/).
+Eleventy `3.1.5` port of the original Zola Slim theme.
 
-This theme was ported to Zola, the original is available at [zhe/hugo-theme-slim](https://github.com/zhe/hugo-theme-slim). It is excellent, thank you [zhe](https://github.com/zhe)!
+## Credit
 
-![Slim screenshot](https://github.com/jameshclrk/zola-slim/blob/master/screenshot.png)
+- Original theme: `jameshclrk/zola-slim`
+- Upstream inspiration: `zhe/hugo-theme-slim`
+- This repository is an Eleventy/Nunjucks port.
 
-[Demo](http://zola-slim.netlify.com).
+## Stack
 
-## Installation
+- Eleventy `3.1.5`
+- Nunjucks templates
+- Luxon date filters
+- Pagefind search indexing
 
+## Global Data
+
+- `_data/metadata.json`
+
+## Commands
+
+```bash
+npm install
+npm run start
+npm run build
 ```
-cd themes
-git clone https://github.com/jameshclrk/zola-slim slim
-```
 
-See the [official docs](https://www.getzola.org/documentation/themes/installing-and-using-themes/) for more information.
+## Routes
 
-## Configuration
-Slim supports a `tags` taxonomy by default. This can be enabled by setting it in your `config.toml`:
-
-```
-taxonomies = [
-    {name = "tags", paginate_by = 5, rss = true}
-]
-```
-
-There are a couple of extra options supported:
-```
-[extra]
-# Show a summary of a post in a list
-slim_summary = false
-# Show the content of a post in a list
-slim_content = false
-# Links to show at the top of the menu
-slim_menu = [
-    {url = "$BASE_URL/tags", name = "Tags"}
-]
-# Links to show at the bottom of the menu
-slim_social = [
-    {url = "https://github.com/jameshclrk", name = "Github"}
-]
-```
+- `/`
+- `/blog/`
+- `/tags/` and `/tags/:tag/`
+- `/feed/feed.xml`
+- `/sitemap.xml`
+- `/robots.txt`
+- `/humans.txt`
 
 ## License
 
-Open sourced under [MIT license](https://github.com/zhe/hugo-theme-slim/blob/master/LICENSE.md).
+See [LICENSE](LICENSE).

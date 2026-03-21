@@ -1,0 +1,14 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: collections.tagList
+  size: 1
+  alias: tag
+permalink: "/tags/{{ tag | slugify }}/index.html"
+disablePagination: true
+eleventyComputed:
+  title: "#{{ tag }} · Slim"
+---
+{% import "macros.njk" as macros %}
+{% set tagged = collections.posts | filterByTag(tag) %}
+{{ macros.listPages(tagged, metadata) }}

@@ -1,0 +1,81 @@
+{% macro header(metadata) %}
+<div class="header">
+  <h1 class="site-title"><a href="/">{{ metadata.title }}</a></h1>
+  <p class="site-tagline">{{ metadata.description }}</p>
+  <div class="nav">
+    <a class="nav-btn" href="#">
+      <span class="ci ci-burger"></span>
+    </a>
+    <ul class="nav-list">
+      {% if metadata.extra.slimMenu and metadata.extra.slimMenu.length %}
+        {% for item in metadata.extra.slimMenu %}
+        <li><a href="{{ item.url | safe }}">{{ item.name }}</a></li>
+        {% endfor %}
+      {% endif %}
+      <li class="spacer">&ac;</li>
+      {% if metadata.extra.slimSocial and metadata.extra.slimSocial.length %}
+        {% for item in metadata.extra.slimSocial %}
+        <li><a href="{{ item.url | safe }}">{{ item.name }}</a></li>
+        {% endfor %}
+      {% endif %}
+    </ul>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro postHeader(post) %}
+<h2 class="post-title"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+<div class="post-header">
+  <span class="post-date">{{ post.date | readableDate('LLLL dd, yyyy') }}</span>
+  {% if post.data.tags and post.data.tags.length %}
+  <div class="post-tags">
+    {% for tag in post.data.tags %}
+      {% if tag != "posts" %}
+      <span class="post-tag">#<a href="/tags/{{ tag | slugify }}/">{{ tag }}</a></span>
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+{% endmacro %}
+
+{% macro listPages(pages, metadata) %}
+{% for post in pages %}
+<div class="post">
+  {{ postHeader(post) }}
+  {% if metadata.extra.slimSummary %}
+    {% if post.data.description %}
+    <div class="summary">
+      {{ post.data.description }}
+      <a class="read-more" href="{{ post.url }}">&hellip;</a>
+    </div>
+    {% endif %}
+  {% elif metadata.extra.slimContent %}
+  <div class="content">
+    {{ post.templateContent | striptags }}
+  </div>
+  {% endif %}
+</div>
+{% endfor %}
+{% endmacro %}
+
+{% macro pagination(pagination) %}
+<div class="pagination">
+  {% if pagination.href.previous %}
+  <a rel="prev" href="{{ pagination.href.previous }}" class="btn previous">Newer</a>
+  {% endif %}
+  {% if pagination.href.next %}
+  <a rel="next" href="{{ pagination.href.next }}" class="btn next">Older</a>
+  {% endif %}
+</div>
+{% endmacro %}
+
+{% macro footer(metadata) %}
+<div class="footer">
+  {% if metadata.extra.slimFooter %}
+  <p>{{ metadata.extra.slimFooter | safe }}</p>
+  {% else %}
+  <p>Powered by <a href="https://www.11ty.dev/">Eleventy</a></p>
+  {% endif %}
+</div>
+{% endmacro %}
